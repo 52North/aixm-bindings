@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>52-North</artifactId>
+		<groupId>org.n52</groupId>
+		<version>5.6.4</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	
+	<packaging>pom</packaging>
+	
+	<groupId>org.n52.aixm</groupId>
+	<artifactId>52n-aixm-bindings</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<description>52North AIXM 5.1 bindings project</description>
+
+	<name>52North AIXM 5.1 bindings project</name>
+	<inceptionYear>2013</inceptionYear>
+
+	<scm>
+		<connection>scm:git:git://github.com/52North/aixm-bindings.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/52North/aixm-bindings.git</developerConnection>
+		<url>https://github.com/52North/aixm-bindings</url>
+	</scm>
+
+	<modules>
+<!-- 		<module>aixm-v51-jaxb-bindings</module> -->
+<!-- 		<module>xlink-v100-jaxb-bindings</module> -->
+<!-- 		<module>gml-v321-jaxb-bindings</module> -->
+<!-- 		<module>gmd-v2007-jaxb-bindings</module> -->
+		<module>uberBinding</module>
+		<module>aixm-roundtrip</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<license.header.file>misc/52n_license_header.txt</license.header.file>
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.0.13</logback.version>
+		<buildDate>${maven.build.timestamp}</buildDate>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<configuration>
+					<header>${license.header.file}</header>
+					<strictCheck>true</strictCheck>
+					<aggregate>true</aggregate>
+					<includes>
+						<include>**/src/**/*.java</include>
+					</includes>
+					<properties>
+						<year>${project.inceptionYear}</year>
+					</properties>
+				</configuration>
+				<executions>
+					<execution>
+						<id>check-headers</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.jvnet.jaxb2.maven2</groupId>
+					<artifactId>maven-jaxb2-plugin</artifactId>
+					<version>0.8.3</version>
+					<configuration>
+						<schemaDirectory>src/main/xsd</schemaDirectory>
+						<bindingDirectory>src/main/xjb</bindingDirectory>
+						<extension>true</extension>
+						<episode>true</episode>
+						<useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
+						<strict>false</strict>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>n52-releases</id>
+			<name>52n Releases</name>
+			<url>http://52north.org/maven/repo/releases/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>n52-snapshots</id>
+			<name>52n Snapshots</name>
+			<url>http://52north.org/maven/repo/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>aixm-v51-jaxb-bindings</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>gml-v321-jaxb-bindings</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>xlink-v100-jaxb-bindings</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>gmd-v2007-jaxb-bindings</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>aixm-v51-jaxb-uberBinding</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>aixm-roundtrip</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jul-to-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>2.2.7</version>
+			</dependency>
+		    <dependency>
+		        <groupId>org.jvnet.jaxb2_commons</groupId>
+		        <artifactId>jaxb2-basics-runtime</artifactId>
+		        <version>0.6.5</version>
+		    </dependency>
+		    
+			<dependency>
+				<groupId>org.n52.wps</groupId>
+				<artifactId>52n-wps-io</artifactId>
+				<version>3.2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.n52.wps</groupId>
+				<artifactId>52n-wps-algorithm</artifactId>
+				<version>3.2.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
