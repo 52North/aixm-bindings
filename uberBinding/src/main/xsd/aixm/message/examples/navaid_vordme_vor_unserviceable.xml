@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd http://www.aixm.aero/schema/5.1/message http://www.aixm.aero/schema/5.1/message/AIXM_BasicMessage.xsd http://www.aixm.aero/schema/5.1/event http://www.aixm.aero/schema/5.1/event/Event_Features.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:message="http://www.aixm.aero/schema/5.1/message" xmlns:aixm="http://www.aixm.aero/schema/5.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:event="http://www.aixm.aero/schema/5.1/event">
+  <!-- omitted soap header in case that Event Services do not require WS-Addressing headers in SOAP messages sent to them -->
+  <!-- <soap12:Header>
+    <wsa:To>http://my.client.com/client/myNotificationConsumer</wsa:To>
+    <wsa:Action>http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify</wsa:Action>
+  </soap12:Header> -->
+  <soap12:Body>
+    <message:AIXMBasicMessage gml:id="bm-id-1">
+      <message:hasMember>
+        <aixm:Navaid gml:id="gmlID221716">
+          <gml:identifier codeSpace="http://www.comsoft.aero/cadas-aimdb/generated">BCB4F904-9AEA-4F2E-97AE-2D4A4344BD6B</gml:identifier>
+          <aixm:timeSlice>
+            <aixm:NavaidTimeSlice gml:id="n-id-1">
+              <gml:validTime>
+                <gml:TimePeriod gml:id="n-id-2">
+                  <gml:beginPosition>2011-08-01T00:00:00.000Z</gml:beginPosition>
+                  <gml:endPosition>2011-10-31T23:59:59.000Z</gml:endPosition>
+                </gml:TimePeriod>
+              </gml:validTime>
+              <aixm:interpretation>TEMPDELTA</aixm:interpretation>
+              <aixm:sequenceNumber>1</aixm:sequenceNumber>
+              <aixm:correctionNumber>23</aixm:correctionNumber>
+              <aixm:type>DME</aixm:type>
+              <aixm:navaidEquipment>
+                <aixm:NavaidComponent gml:id="nc-id-1">
+                  <aixm:collocationGroup>1</aixm:collocationGroup>
+                  <!-- tbd -->
+                  <aixm:markerPosition>MIDDLE</aixm:markerPosition>
+                  <!-- tbd -->
+                  <aixm:providesNavigableLocation>YES</aixm:providesNavigableLocation>
+                  <!-- tbd -->
+                  <aixm:theNavaidEquipment xlink:href="#vor-id-1"/>
+                </aixm:NavaidComponent>
+              </aixm:navaidEquipment>
+              <aixm:navaidEquipment>
+                <aixm:NavaidComponent gml:id="nc-id-2">
+                  <aixm:collocationGroup>2</aixm:collocationGroup>
+                  <!-- tbd -->
+                  <aixm:markerPosition>MIDDLE</aixm:markerPosition>
+                  <!-- tbd -->
+                  <aixm:providesNavigableLocation>YES</aixm:providesNavigableLocation>
+                  <!-- tbd -->
+                  <aixm:theNavaidEquipment xlink:href="urn:uuid:a82b3fc9-4aa4-4e67-8defaaea1ac595j"/>
+                  <!-- reference to external feature (DME); not needed in message as its operational status does not change; however, navaidEquipment element needs to be added according to Temporality Model section 3.5 -->
+                  <!-- tbd: more navaid equipments if needed -->
+                </aixm:NavaidComponent>
+              </aixm:navaidEquipment>
+              <aixm:availability>
+                <aixm:NavaidOperationalStatus gml:id="n-id-3">
+                  <!-- if there is no status change during the Tempdelta's validTime then omit timeIntervals -->
+                  <aixm:operationalStatus>PARTIAL</aixm:operationalStatus>
+                </aixm:NavaidOperationalStatus>
+              </aixm:availability>
+              <aixm:extension>
+                <event:NavaidExtension gml:id="n-id-4">
+                  <event:theEvent xlink:href="#e-id-1"/>
+                </event:NavaidExtension>
+              </aixm:extension>
+            </aixm:NavaidTimeSlice>
+          </aixm:timeSlice>
+        </aixm:Navaid>
+      </message:hasMember>
+      <message:hasMember>
+        <event:Event gml:id="e-id-1">
+          <gml:identifier codeSpace="tbd">5391B4F43BBF20211D50BCEF6C0093B8</gml:identifier>
+          <!-- tbd: add Permdelta or not -->
+          <event:timeSlice>
+            <event:EventTimeSlice gml:id="e-id-2">
+              <gml:validTime>
+                <gml:TimePeriod gml:id="e-id-3">
+                  <gml:beginPosition>2011-08-01T00:00:00.000Z</gml:beginPosition>
+                  <gml:endPosition>2011-10-31T23:59:59.000Z</gml:endPosition>
+                </gml:TimePeriod>
+              </gml:validTime>
+              <aixm:interpretation>BASELINE</aixm:interpretation>
+              <aixm:sequenceNumber>1</aixm:sequenceNumber>
+              <aixm:featureLifetime>
+                <gml:TimePeriod gml:id="e-id-4">
+                  <gml:beginPosition>2011-08-01T00:00:00.000Z</gml:beginPosition>
+                  <gml:endPosition>2011-10-31T23:59:59.000Z</gml:endPosition>
+                </gml:TimePeriod>
+              </aixm:featureLifetime>
+              <event:encoding>DIGITAL</event:encoding>
+              <event:scenario>NAV.UNS</event:scenario>
+            </event:EventTimeSlice>
+          </event:timeSlice>
+        </event:Event>
+      </message:hasMember>
+      <message:hasMember>
+        <aixm:VOR gml:id="vor-id-1">
+          <gml:identifier codeSpace="tbd">02987d87as8762</gml:identifier>
+          <aixm:timeSlice>
+            <aixm:VORTimeSlice gml:id="vor-id-2">
+              <gml:validTime>
+                <gml:TimePeriod gml:id="vor-id-3">
+                  <gml:beginPosition>2011-08-01T00:00:00.000Z</gml:beginPosition>
+                  <gml:endPosition>2011-10-31T23:59:59.000Z</gml:endPosition>
+                </gml:TimePeriod>
+              </gml:validTime>
+              <aixm:interpretation>TEMPDELTA</aixm:interpretation>
+              <aixm:sequenceNumber>1</aixm:sequenceNumber>
+              <aixm:correctionNumber>12</aixm:correctionNumber>
+              <aixm:availability>
+                <aixm:NavaidOperationalStatus gml:id="vor-id-4">
+                  <aixm:operationalStatus>UNSERVICEABLE</aixm:operationalStatus>
+                </aixm:NavaidOperationalStatus>
+              </aixm:availability>
+              <aixm:extension>
+                <event:VORExtension gml:id="vor-id-5">
+                  <event:theEvent xlink:href="#e-id-1"/>
+                </event:VORExtension>
+              </aixm:extension>
+            </aixm:VORTimeSlice>
+          </aixm:timeSlice>
+        </aixm:VOR>
+      </message:hasMember>
+    </message:AIXMBasicMessage>
+  </soap12:Body>
+</soap12:Envelope>

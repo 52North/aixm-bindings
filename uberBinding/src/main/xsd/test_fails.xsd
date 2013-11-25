@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:test="http://www.test.com/1.0" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.test.com/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+	
+	<element name="TestElement" type="test:TestType"/>
+	<complexType name="TestType">
+		<sequence>
+			<element name="name" type="string"/>
+		</sequence>
+		<attribute ref="xlink:title" use="required"/>
+	</complexType>
+</schema>
