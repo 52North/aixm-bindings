@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	jaxb:extensionBindingPrefixes="xjc" version="2.1">
+	<jaxb:bindings schemaLocation="../xsd/iso/19139/20070417/gmd/gmd.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.isotc211.gmd.v2007" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="../xsd/iso/19139/20070417/gco/gco.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.isotc211.gco.v2007" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="../xsd/iso/19139/20070417/gsr/gsr.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.isotc211.gsr.v2007" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="../xsd/iso/19139/20070417/gss/gss.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.isotc211.gss.v2007" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+
+	<jaxb:bindings schemaLocation="../xsd/iso/19139/20070417/gts/gts.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.isotc211.gts.v2007" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+</jaxb:bindings>

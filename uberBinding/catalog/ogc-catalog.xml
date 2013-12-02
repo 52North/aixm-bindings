@@ -1,0 +1,33 @@
+<!DOCTYPE catalog
+    PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+           "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+ 
+    <!-- uri seems to be resolved relative to the catalog file path by xjc!! -->
+    <!--<system
+        systemId="http://www.w3.org/1999/xlink.xsd"
+        uri="../schemas/ogc/xlink/1.0.0/xlinks.xsd"/>-->
+    <!--<public
+        publicId="http://www.w3.org/1999/xlink"
+        uri="../schemas/ogc/xlink/1.0.0/xlinks.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gmd"
+		uri="../schemas/ogc/iso/19139/20070417/gmd/gmd.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gco"
+		uri="../schemas/ogc/iso/19139/20070417/gco/gco.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gmx"
+		uri="../schemas/ogc/iso/19139/20070417/gmx/gmx.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gsr"
+		uri="../schemas/ogc/iso/19139/20070417/gsr/gsr.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gss"
+		uri="../schemas/ogc/iso/19139/20070417/gss/gss.xsd"/>
+	<public
+		publicId="http://www.isotc211.org/2005/gts"
+		uri="../schemas/ogc/iso/19139/20070417/gts/gts.xsd"/> -->
+
+        
+</catalog>

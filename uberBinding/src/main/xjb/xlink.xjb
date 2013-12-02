@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	jaxb:extensionBindingPrefixes="xjc" version="2.1">
+	<jaxb:bindings schemaLocation="../xsd/xlink/1.0.0/xlink.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="org.w3.xlink.v1999" />
+			<jaxb:nameXmlTransform>
+				<jaxb:elementName suffix="Element" />
+			</jaxb:nameXmlTransform>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="//xs:attribute[@name='title']">
+			<jaxb:property name="titleAttribute" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>
