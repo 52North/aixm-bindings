@@ -1,0 +1,22 @@
+<project default="compile">
+	
+	<property name="build.dir" value=".build"/>
+	<property name="binary.dir" value=".bin"/>
+	
+	<target name="compile">
+		<delete dir="${build.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<exec executable="xjc">
+			<arg value="src/main/xsd/aixm/AIXM_Features.xsd"/>
+			<arg value="-b"/>
+			<arg value="src/main/xjb"/>
+			<arg value="-extension"/>
+			<arg value="-d"/>
+			<arg value="${build.dir}"/>
+		</exec>
+		<delete dir="${binary.dir}"/>
+		<mkdir dir="${binary.dir}"/>
+		<javac srcdir="${build.dir}" destdir="${binary.dir}"/>
+		<jar destfile="aixm-bindings-all.jar" basedir="${binary.dir}"/>
+	</target>
+</project>
