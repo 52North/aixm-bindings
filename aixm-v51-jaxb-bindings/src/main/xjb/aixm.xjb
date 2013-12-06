@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	jaxb:extensionBindingPrefixes="xjc" version="2.1">
+	<jaxb:bindings schemaLocation="../xsd/aixm/AIXM_Features.xsd"
+		node="/xs:schema">
+		<jaxb:globalBindings
+			fixedAttributeAsConstantProperty="true" typesafeEnumBase="xs:string"
+			typesafeEnumMemberName="generateName" generateIsSetMethod="true">
+			<xjc:noValidator />
+			<xjc:noValidatingUnmarshaller />
+		</jaxb:globalBindings>
+		<jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='AerialRefuellingPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='ApronPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='CityPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='AirportHeliportPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='AirspacePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='GeoBorderPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='RadarEquipmentPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='StandardLevelTablePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='ContactInformationPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='SpecialDatePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='ServicePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='NavaidPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='NavaidEquipmentPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='SpecialNavigationStationPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='SpecialNavigationSystemPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='DesignatedPointPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='AeronauticalGroundLightPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='OrganisationAuthorityPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='UnitPropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='VerticalStructurePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='ProcedurePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+			<jaxb:bindings
+				node="//xs:group[@name='RoutePropertyGroup']//xs:element[@name='name']">
+				<jaxb:property name="AIXMName" />
+			</jaxb:bindings>
+		</jaxb:bindings>
+		<jaxb:schemaBindings>
+			<jaxb:package name="aero.aixm.v510" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+</jaxb:bindings>
