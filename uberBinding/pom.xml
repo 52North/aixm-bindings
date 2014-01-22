@@ -23,6 +23,8 @@
 				<configuration>
 					<schemaIncludes>
 						<value>aixm/AIXM_Features.xsd</value>
+						<value>aixm/message/AIXM_BasicMessage.xsd</value>
+						<value>aixm/event/Event_Features.xsd</value>
 					</schemaIncludes>
 				</configuration>
 			</plugin>

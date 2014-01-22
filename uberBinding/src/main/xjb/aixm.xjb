@@ -104,4 +104,18 @@
 			<jaxb:package name="aero.aixm.v510" />
 		</jaxb:schemaBindings>
 	</jaxb:bindings>
+	
+	<jaxb:bindings schemaLocation="../xsd/aixm/message/AIXM_BasicMessage.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="aero.aixm.v510.message" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
+	
+	<jaxb:bindings schemaLocation="../xsd/aixm/event/Event_Features.xsd"
+		node="/xs:schema">
+		<jaxb:schemaBindings>
+			<jaxb:package name="aero.aixm.v510.event" />
+		</jaxb:schemaBindings>
+	</jaxb:bindings>
 </jaxb:bindings>

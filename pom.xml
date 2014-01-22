@@ -46,6 +46,7 @@
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
 				<version>1.9.0</version>
+				<inherited>false</inherited>
 				<configuration>
 					<header>${license.header.file}</header>
 					<strictCheck>true</strictCheck>
